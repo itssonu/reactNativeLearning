@@ -1,4 +1,13 @@
-import { StyleSheet, Text, View, TextInput, Button, ScrollView, FlatList } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Button,
+  ScrollView,
+  FlatList,
+  Pressable
+} from "react-native";
 import React, { useState } from "react";
 
 export default function TodoApp() {
@@ -10,7 +19,11 @@ export default function TodoApp() {
   };
   const addGoalhandler = () => {
     setGoalList((state) => [...state, goal]);
-    setGoal('')
+    setGoal("");
+  };
+  const goalItemPressHandler = (goal) => {
+    let goals = goalList.filter((v)=> v !== goal)
+    setGoalList(goals);
   };
   return (
     <View style={styles.appContainer}>
@@ -25,9 +38,15 @@ export default function TodoApp() {
       </View>
       <View style={styles.goalListContainer}>
         <FlatList
-        data={goalList}
-        renderItem={(v)=><Text style={styles.goalListMapText}>{v.item}</Text>}
-        keyExtractor={(v,k)=>k.toString()}
+          data={goalList}
+          renderItem={(v) => {
+            return (
+              <Pressable android_ripple={true} onPress={()=>goalItemPressHandler(v.item)}>
+                <Text style={styles.goalListMapText}>{v.item}</Text>
+              </Pressable>
+            );
+          }}
+          keyExtractor={(v, k) => k.toString()}
         />
       </View>
     </View>
@@ -59,17 +78,17 @@ const styles = StyleSheet.create({
     flex: 4,
     padding: 20,
   },
-  goalListheader:{
-    fontSize:20,
-    fontWeight:'bold',
-    justifyContent:'center'
+  goalListheader: {
+    fontSize: 20,
+    fontWeight: "bold",
+    justifyContent: "center",
   },
-  goalListMapText:{
-    backgroundColor:'red',
-    borderRadius:20,
-    padding:12,
-    margin:12,
-    color:'white'
+  goalListMapText: {
+    backgroundColor: "red",
+    borderRadius: 20,
+    padding: 12,
+    margin: 12,
+    color: "white",
     // borderWidth:2
-  }
+  },
 });
