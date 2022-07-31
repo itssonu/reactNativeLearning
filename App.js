@@ -1,10 +1,10 @@
 import { NavigationContainer } from "@react-navigation/native";
-import MyDrawer from "./navigation/MyDrawer";
+import MyStack from "./navigation/MyStack";
 
 export default function App() {
   return (
     <NavigationContainer>
-      <MyDrawer />
+      <MyStack />
     </NavigationContainer>
   );
 }

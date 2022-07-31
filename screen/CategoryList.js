@@ -6,7 +6,7 @@ import FoodCard from "../components/FoodCard.js";
 
 export default function CategoryList(props) {
     const onCatCardPressHandler = (catId)=>{
-        props.navigation.navigate('AllFood', { catId: catId })
+        props.navigation.navigate('All Food', { catId: catId })
     }
   return (
     <View style={styles.container}>
