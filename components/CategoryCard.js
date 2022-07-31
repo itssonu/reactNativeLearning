@@ -1,11 +1,15 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function CategoryCard(props) {
   return (
-    <View style={[styles.card, { backgroundColor: props.item.color }]}>
-      <Text style={styles.cardTitle}>{props.item.title}</Text>
+    <TouchableOpacity onPress={()=>props.onCatCardPressHandler(props.data.id)}>
+    <View style={[styles.card, { backgroundColor: props.data.color }]}>
+      <Text style={styles.cardTitle}>{props.data.title}</Text>
     </View>
+    </TouchableOpacity>
   );
 }
 
