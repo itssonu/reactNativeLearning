@@ -16,9 +16,9 @@ function Home() {
 export default function MyDrawer() {
   return (
     <Drawer.Navigator>
+      <Drawer.Screen name="Food App" component={FoodApp} />
       <Drawer.Screen name="Home" component={Home} />
       <Drawer.Screen name="Todo App" component={TodoApp} />
-      <Drawer.Screen name="Food App" component={FoodApp} />
     </Drawer.Navigator>
   );
 }

@@ -1,27 +1,18 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View, FlatList } from "react-native";
 import React from "react";
+import { CATEGORIES } from "../dummy-data";
+import CategoryCard from "../components/CategoryCard";
 
 export default function FoodApp() {
   return (
-    <View style={styles.constainer}>
-      <View style={styles.card}>
-        <Text>FoodApp</Text>
-      </View>
-      <View style={styles.card}>
-        <Text>FoodApp</Text>
-      </View>
+    <View style={styles.container}>
+      <FlatList data={CATEGORIES} keyExtractor={(v)=>v.id} renderItem={CategoryCard} numColumns={2}   />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  constainer: {
+  container: {
     flex: 1,
-  },
-  card: {
-    width: 150,
-    height: 150,
-    margin:16,
-    backgroundColor:'red'
   },
 });
