@@ -1,17 +1,11 @@
-import React, { useState } from "react";
-import { View } from "react-native";
-import Counter from "./screens/Counter";
-import FlexDemo from "./screens/FlexDemo";
-import TodoApp from "./screens/TodoApp";
+import { NavigationContainer } from "@react-navigation/native";
+import MyDrawer from "./navigation/MyDrawer";
 
-const App = () => {
+export default function App() {
   return (
-    <View style={{flex:1}}>
-      {/* <Counter /> */}
-      {/* <FlexDemo /> */}
-      <TodoApp />
-    </View>
+    <NavigationContainer>
+      <MyDrawer />
+    </NavigationContainer>
   );
-};
+}
 
-export default App;
