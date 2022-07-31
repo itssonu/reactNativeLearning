@@ -1,7 +1,8 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import TodoApp from "../screens/TodoApp";
+import TodoApp from "../app/TodoApp";
+import FoodApp from "../app/FoodApp";
 
 const Drawer = createDrawerNavigator();
 
@@ -16,7 +17,8 @@ export default function MyDrawer() {
   return (
     <Drawer.Navigator>
       <Drawer.Screen name="Home" component={Home} />
-      <Drawer.Screen name="Todo" component={TodoApp} />
+      <Drawer.Screen name="Todo App" component={TodoApp} />
+      <Drawer.Screen name="Food App" component={FoodApp} />
     </Drawer.Navigator>
   );
 }
