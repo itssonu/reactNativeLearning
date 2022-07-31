@@ -9,7 +9,7 @@ const Stack = createNativeStackNavigator();
 export default function MyStack() {
     return (
         <Stack.Navigator>
-          <Stack.Screen options={{ headerShown: false }} name="Food App" component={CategoryList} />
+          <Stack.Screen name="Food App" component={CategoryList} />
           <Stack.Screen name="AllFood" component={AllFood} />
         </Stack.Navigator>
       );
